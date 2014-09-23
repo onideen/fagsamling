@@ -1,27 +1,77 @@
 @(days: List[Day])
 @main("Admin - Activity") {
 
-<h1>Legg til dag</h1>
-<form method="POST" action="@routes.DayController.add">
-    <input type="text" name="title" placeholder="Tittel" />
-    <input type="submit" value="Lagre" />
-</form>
+    <div class="col-lg-12">
 
 
-@for(day<-days){
-<div>@day.getTitle ------ <a href="@routes.DayController.delete(day.getId)">SLETT</a> </div>
+    @for(day <- days){
+        <div class="day-wrapper">
+            <h3>@day.getTitle <a class="btn btn-danger btn-xs pull-right" href="@routes.DayController.delete(day.getId)">Slett dag</a></h3>
 
-<form action="@routes.ActivityController.add(day.getId)" method="POST">
-    <input type="text" name="start-time" placeholder="Begynner" />
-    <input type="text" name="end-time" placeholder="Slutter" />
-    <input type="text" name="title" placeholder="Tittel" />
+            <form class="form-horizontal" action="@routes.ActivityController.add(day.getId)" method="POST">
 
-    <input type="submit" value="Lagre" />
-</form>
+                <fieldset>
+                    <legend>Legg til ny aktivitet til "@day.getTitle"</legend>
 
-@for(activity<-day.getActivities){
-<div>@activity.getStartTime - @activity.getEndTime: @activity.getTitle  --------- <a href="@routes.ActivityController.delete(activity.getId)">SLETT</a>  </div>
-}
-}
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="title">Legg til ny aktivitet</label>
+                            <input id="title" name="title" type="text" placeholder="Aktivitetsnavn" class="form-control input-md" required="">
+                        </div>
+                    </div>
 
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label class="control-label" for="start-time">Starter</label>
+                            <input id="start-time" name="start-time" type="text" placeholder="Starter" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label class="control-label" for="end-time">Slutter</label>
+                            <input id="end-time" name="end-time" type="text" placeholder="Slutter" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group last-element">
+                            <label class="control-label" for="save-activity"></label>
+                            <button id="save-activity" name="save-activity" class="btn btn-primary">Legg til</button>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </form>
+
+            <hr>
+            <h4>Aktiviteter i denne dagen:</h4>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Aktivit</th>
+                        <th>Fra</th>
+                        <th>Til</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(activity <- day.getActivities){
+                    <tr>
+                        <td>@activity.getTitle</td>
+                        <td>@activity.getStartTime</td>
+                        <td>@activity.getEndTime</td>
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+    }
+    </div>
 }
