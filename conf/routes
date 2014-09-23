@@ -6,8 +6,10 @@
 GET        /                      controllers.Application.index()
 
 
-GET        /admin/activity        controllers.ActivityController.dashboard()
-
+GET        /admin/activity              controllers.ActivityController.dashboard()
+GET        /admin/day                   controllers.DayController.dashboard()
+POST       /admin/day/add               controllers.DayController.add()
+GET       /admin/day/delete             controllers.DayController.delete(id : Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

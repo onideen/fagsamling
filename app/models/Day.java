@@ -18,19 +18,32 @@ public class Day extends Model {
     @Id
     private long id;
 
-    public String title;
+    private String title;
     public int position;
 
     @OneToMany
     private List<Activity> activities;
 
-    private Finder<Long, Day> find = new Finder<>(Long.class, Day.class);
+    private static Finder<Long, Day> find = new Finder<Long, Day>(Long.class, Day.class);
 
-    public List<Day> findAll(){
+    public static List<Day> findAll(){
         return find.all();
+    }
+
+    public static Day findById(long id) {
+        return find.byId(id);
     }
 
     public long getId(){
         return id;
     }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
 }

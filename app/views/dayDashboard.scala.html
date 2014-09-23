@@ -1,0 +1,14 @@
+@(days: List[Day])
+@main("Admin - Days") {
+
+    <form method="POST" action="@routes.DayController.add">
+        <input type="text" name="title" placeholder="Tittel" />
+        <input type="submit" value="Lagre" />
+    </form>
+
+
+    @for(day<-days){
+        <div>@day.getTitle ------ <a href="@routes.DayController.delete(day.getId)">SLETT</a> </div>
+    }
+
+}

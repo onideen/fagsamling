@@ -1,6 +1,5 @@
 package controllers;
 
-import models.Activity;
 import models.Day;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -9,29 +8,31 @@ import views.html.*;
 import java.util.List;
 import java.util.Map;
 
-public class ActivityController extends Controller {
+public class DayController extends Controller {
 
     public static Result dashboard() {
 
-        return ok(activityDashboard.render(Activity.findAll()));
+        return ok(dayDashboard.render(Day.findAll()));
     }
 
 
     public static Result add() {
+        List<Day> days = Day.findAll();
         Map<String, String[]> values = request().body().asFormUrlEncoded();
 
-        Activity day = new Activity();
+        Day day = new Day();
+        day.position = days.size();
         day.setTitle(values.get("title")[0]);
         day.save();
 
-        return redirect(controllers.routes.ActivityController.dashboard());
+        return redirect(controllers.routes.DayController.dashboard());
     }
 
 
     public static Result delete(long id) {
-        Activity activity = Activity.findById(id);
-        activity.delete();
+        Day day = Day.findById(id);
+        day.delete();
 
-        return redirect(controllers.routes.ActivityController.dashboard());
+        return redirect(controllers.routes.DayController.dashboard());
     }
 }

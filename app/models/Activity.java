@@ -10,22 +10,55 @@ import java.util.List;
  */
 
 @Entity
-public class Activity extends Model {
+public class Activity extends Model implements Comparable<Activity>{
 
     @Id
     private long id;
 
     @ManyToOne
     public Day day;
-    public String startTime;
-    public String endTime;
-    public String title;
+    private String startTime;
+    private String endTime;
+    private String title;
     public boolean active;
 
-    private Finder<Long, Activity> find = new Finder<>(Long.class, Activity.class);
+    private static Finder<Long, Activity> find = new Finder<Long, Activity>(Long.class, Activity.class);
 
-    public List<Activity> findAll(){
+    public static List<Activity> findAll(){
         return find.all();
     }
 
+    public static Activity findById(long id){
+        return find.byId(id);
+    }
+
+
+    @Override
+    public int compareTo(Activity other) {
+        return startTime.compareTo(other.startTime);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
 }
