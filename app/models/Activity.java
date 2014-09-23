@@ -65,4 +65,8 @@ public class Activity extends Model implements Comparable<Activity>{
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
+
+    public long getId() {
+        return id;
+    }
 }

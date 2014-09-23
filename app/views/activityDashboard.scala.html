@@ -20,7 +20,7 @@
 </form>
 
 @for(activity<-day.getActivities){
-<div>@activity.getStartTime - @activity.getEndTime: @activity.getTitle</div>
+<div>@activity.getStartTime - @activity.getEndTime: @activity.getTitle  --------- <a href="@routes.ActivityController.delete(activity.getId)">SLETT</a>  </div>
 }
 }
 
