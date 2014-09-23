@@ -1,0 +1,21 @@
+@(tracks: List[Track])
+@main("Admin - Tracks") {
+
+<h1>Tracks</h1>
+<form method="POST" action="@routes.DayController.add">
+    <input type="text" name="title" placeholder="Tittel" />
+    <input type="submit" value="Lagre" />
+</form>
+
+
+    @for(track<-tracks){
+        <div>
+            <h2>@track.getTitle ------ <a href="@routes.DayController.delete(day.getId)">SLETT</a></h2>
+
+
+
+        </div>
+
+    }
+
+}
