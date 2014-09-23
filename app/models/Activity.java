@@ -16,11 +16,11 @@ public class Activity extends Model implements Comparable<Activity>{
     private long id;
 
     @ManyToOne
-    public Day day;
+    private Day day;
     private String startTime;
     private String endTime;
     private String title;
-    public boolean active;
+    private boolean active;
 
     private static Finder<Long, Activity> find = new Finder<Long, Activity>(Long.class, Activity.class);
 
@@ -30,6 +30,10 @@ public class Activity extends Model implements Comparable<Activity>{
 
     public static Activity findById(long id){
         return find.byId(id);
+    }
+
+    public Activity(Day day) {
+        this.day = day;
     }
 
 

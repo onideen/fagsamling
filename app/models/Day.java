@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -46,4 +46,8 @@ public class Day extends Model {
         this.title = title;
     }
 
+    public List<Activity> getActivities() {
+        Collections.sort(activities);
+        return activities;
+    }
 }

@@ -1,6 +1,27 @@
-@(activities: List[Activity])
+@(days: List[Day])
 @main("Admin - Activity") {
 
-    Trololo
+<h1>Legg til dag</h1>
+<form method="POST" action="@routes.DayController.add">
+    <input type="text" name="title" placeholder="Tittel" />
+    <input type="submit" value="Lagre" />
+</form>
+
+
+@for(day<-days){
+<div>@day.getTitle ------ <a href="@routes.DayController.delete(day.getId)">SLETT</a> </div>
+
+<form action="@routes.ActivityController.add(day.getId)" method="POST">
+    <input type="text" name="start-time" placeholder="Begynner" />
+    <input type="text" name="end-time" placeholder="Slutter" />
+    <input type="text" name="title" placeholder="Tittel" />
+
+    <input type="submit" value="Lagre" />
+</form>
+
+@for(activity<-day.getActivities){
+<div>@activity.getStartTime - @activity.getEndTime: @activity.getTitle</div>
+}
+}
 
 }

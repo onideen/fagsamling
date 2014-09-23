@@ -10,11 +10,6 @@ import java.util.Map;
 
 public class DayController extends Controller {
 
-    public static Result dashboard() {
-
-        return ok(dayDashboard.render(Day.findAll()));
-    }
-
 
     public static Result add() {
         List<Day> days = Day.findAll();
@@ -25,7 +20,7 @@ public class DayController extends Controller {
         day.setTitle(values.get("title")[0]);
         day.save();
 
-        return redirect(controllers.routes.DayController.dashboard());
+        return redirect(controllers.routes.ActivityController.dashboard());
     }
 
 
@@ -33,6 +28,6 @@ public class DayController extends Controller {
         Day day = Day.findById(id);
         day.delete();
 
-        return redirect(controllers.routes.DayController.dashboard());
+        return redirect(controllers.routes.ActivityController.dashboard());
     }
 }

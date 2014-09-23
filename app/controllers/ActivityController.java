@@ -13,16 +13,19 @@ public class ActivityController extends Controller {
 
     public static Result dashboard() {
 
-        return ok(activityDashboard.render(Activity.findAll()));
+        return ok(activityDashboard.render(Day.findAll()));
     }
 
 
-    public static Result add() {
+    public static Result add(Long dayId) {
+        Day day = Day.findById(dayId);
         Map<String, String[]> values = request().body().asFormUrlEncoded();
 
-        Activity day = new Activity();
-        day.setTitle(values.get("title")[0]);
-        day.save();
+        Activity activity = new Activity(day);
+        activity.setStartTime(values.get("start-time")[0]);
+        activity.setEndTime(values.get("end-time")[0]);
+        activity.setTitle(values.get("title")[0]);
+        activity.save();
 
         return redirect(controllers.routes.ActivityController.dashboard());
     }

@@ -1,7 +1,13 @@
-@(message: String)
+@(days: List[Day])
+@main("Admin - Activity") {
 
-@main("Welcome to Play") {
+    @for(day<-days){
+        <div>@day.getTitle</div>
 
-@play20.welcome(message, style = "Java")
+        @for(activity<-day.getActivities){
+           <div>@activity.getStartTime - @activity.getEndTime: @activity.getTitle</div>
+        }
+    }
 
 }
+
