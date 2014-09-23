@@ -2,10 +2,12 @@
     padding: 20px;
     background: #eee;
     border-radius: 5px;
-    margin-bottom: 15px;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
-.day-wrapper h3{ margin: 0}
+.day-wrapper h3 { margin: 0}
+.day-rwapper hr { border-color: darkgray; background: darkgray; }
 
 .last-element {
     margin-bottom: 0;
