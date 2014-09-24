@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Activity;
 import models.Day;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -26,6 +27,9 @@ public class DayController extends Controller {
 
     public static Result delete(long id) {
         Day day = Day.findById(id);
+        for(Activity activity : day.getActivities()){
+            activity.delete();
+        }
         day.delete();
 
         return redirect(controllers.routes.ActivityController.dashboard());
