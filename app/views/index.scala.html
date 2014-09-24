@@ -1,13 +1,35 @@
 @(days: List[Day])
 @main("Admin - Activity") {
 
-    @for(day<-days){
-        <div>@day.getTitle</div>
+<div class="col-lg-12">
 
-        @for(activity<-day.getActivities){
-           <div>@activity.getStartTime - @activity.getEndTime: @activity.getTitle</div>
-        }
+    @for(day <- days){
+    <div class="day-wrapper">
+
+        <h4>@day.getTitle</h4>
+
+        <table class="table table-hover">
+            <thead>
+
+            </thead>
+            <tbody>
+            @for(activity <- day.getActivities){
+            <tr>
+                <td>@activity.getStartTime - @activity.getEndTime</td>
+                <td>@activity.getTitle</td>
+                <td>@activity.room</td>
+            </tr>
+            }
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
     }
-
+</div>
 }
 

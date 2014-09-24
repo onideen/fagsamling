@@ -2,6 +2,7 @@ package controllers;
 
 import models.Activity;
 import models.Day;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
@@ -14,11 +15,10 @@ public class DayController extends Controller {
 
     public static Result add() {
         List<Day> days = Day.findAll();
-        Map<String, String[]> values = request().body().asFormUrlEncoded();
 
-        Day day = new Day();
+        Day day = Form.form(Day.class).bindFromRequest().get();
         day.position = days.size();
-        day.setTitle(values.get("title")[0]);
+
         day.save();
 
         return redirect(controllers.routes.ActivityController.dashboard());

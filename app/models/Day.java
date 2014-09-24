@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ public class Day extends Model {
     @Id
     private long id;
 
+    @Constraints.Required
     private String title;
     public int position;
 
@@ -44,6 +46,10 @@ public class Day extends Model {
 
     public void setTitle(String title){
         this.title = title;
+    }
+
+    public void setId(long id){
+        this.id = id;
     }
 
     public List<Activity> getActivities() {
