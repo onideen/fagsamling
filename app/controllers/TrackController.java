@@ -2,16 +2,25 @@ package controllers;
 
 import models.Activity;
 import models.Day;
+import models.Track;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.activityDashboard;
+import views.html.*;
+import controllers.routes;
 
 import java.util.Map;
 
+import static play.libs.Json.toJson;
+
 public class TrackController extends Controller {
 
-    public static Result serve(){
+    public static Result getTracks(){
         return ok(tracks.render(Track.findAll()));
+    }
+
+    public static Result serve(long id){
+        return ok(track.render(Track.findById(id)));
     }
 
     public static Result dashboard() {
@@ -19,27 +28,21 @@ public class TrackController extends Controller {
         return ok(trackDashboard.render(Track.findAll()));
     }
 
-/*
-    public static Result add(Long dayId) {
-        Day day = Day.findById(dayId);
-        Map<String, String[]> values = request().body().asFormUrlEncoded();
 
-        Activity activity = new Activity(day);
-        activity.setStartTime(values.get("start-time")[0]);
-        activity.setEndTime(values.get("end-time")[0]);
-        activity.setTitle(values.get("title")[0]);
-        activity.save();
+    public static Result add() {
+        Track track = Form.form(Track.class).bindFromRequest().get();
+        track.save();
+        System.out.println(toJson(track));
 
-        return redirect(TrackController.dashboard());
+        return redirect(routes.TrackController.dashboard());
     }
 
 
     public static Result delete(long id) {
-        Activity activity = Activity.findById(id);
-        activity.delete();
+        Track track = Track.findById(id);
+        track.delete();
 
-        return redirect(TrackController.dashboard());
+        return redirect(routes.TrackController.dashboard());
     }
 
-    */
 }

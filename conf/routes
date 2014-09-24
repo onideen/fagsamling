@@ -4,13 +4,17 @@
 
 # Home page
 GET        /                      controllers.Application.index()
-
+GET        /tracks                      controllers.TrackController.getTracks()
+GET        /track/:id                   controllers.TrackController.serve(id: Long)
 
 GET        /admin/activity              controllers.ActivityController.dashboard()
 POST       /admin/activity/add          controllers.ActivityController.add()
 GET        /admin/activity/delete       controllers.ActivityController.delete(id : Long)
 POST       /admin/day/add               controllers.DayController.add()
 GET        /admin/day/delete            controllers.DayController.delete(id : Long)
+GET        /admin/tracks                controllers.TrackController.dashboard()
+POST       /admin/tracks/add            controllers.TrackController.add()
+GET        /admin/tracks/delete         controllers.TrackController.delete(id : Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

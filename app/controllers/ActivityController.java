@@ -24,8 +24,8 @@ public class ActivityController extends Controller {
 
     public static Result add() {
         Activity activity = Form.form(Activity.class).bindFromRequest().get();
-        System.out.println(Day.findById(activity.day.getId()));
         activity.save();
+        System.out.println(toJson(activity));
 
         return redirect(controllers.routes.ActivityController.dashboard());
     }

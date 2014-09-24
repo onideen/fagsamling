@@ -4,7 +4,6 @@ import play.db.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import java.util.List;
 
 /**
@@ -22,7 +21,7 @@ public class Track extends Model {
     private String host;
     private String format;
     private String level;
-    private String place;
+    private String room;
     private String description;
     private String audience;
     private List<Requirement> requirements;
@@ -69,12 +68,12 @@ public class Track extends Model {
         this.level = level;
     }
 
-    public String getPlace() {
-        return place;
+    public String getRoom() {
+        return room;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public String getDescription() {
@@ -91,5 +90,17 @@ public class Track extends Model {
 
     public void setAudience(String audience) {
         this.audience = audience;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getInstructors() {
+        return instructors;
+    }
+
+    public void setInstructors(String instructors) {
+        this.instructors = instructors;
     }
 }
