@@ -10,11 +10,11 @@
         </form>
 
     @for(day <- days){
-        <div class="day-wrapper">
+        <div class="day-wrapper" id="@day.getTitle">
             <h3>@day.getTitle <a class="btn btn-danger btn-xs pull-right" href="@routes.DayController.delete(day.getId)">Slett dag</a></h3>
 
-            <form class="form-horizontal" action="@routes.ActivityController.add(day.getId)" method="POST">
-
+            <form class="form-horizontal" action="@routes.ActivityController.add#@day.getTitle" method="POST">
+                <input type="hidden" name="day.id" value="@day.getId" />
                 <fieldset>
                     <legend>Legg til ny aktivitet til "@day.getTitle"</legend>
 
@@ -25,17 +25,24 @@
                         </div>
                     </div>
 
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="room">Rom</label>
+                            <input id="room" name="room" type="text" placeholder="Rom" class="form-control input-md">
+                        </div>
+                    </div>
+
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label class="control-label" for="start-time">Starter</label>
-                            <input id="start-time" name="start-time" type="text" placeholder="Starter" class="form-control input-md" required="">
+                            <input id="start-time" name="startTime" type="text" placeholder="Starter" class="form-control input-md" required="">
                         </div>
                     </div>
 
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label class="control-label" for="end-time">Slutter</label>
-                            <input id="end-time" name="end-time" type="text" placeholder="Slutter" class="form-control input-md" required="">
+                            <input id="end-time" name="endTime" type="text" placeholder="Slutter" class="form-control input-md" required="">
                         </div>
                     </div>
 
@@ -58,6 +65,8 @@
                         <th>Aktivitet</th>
                         <th>Fra</th>
                         <th>Til</th>
+                        <th>Rom</th>
+                        <th width="10%"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,6 +75,8 @@
                         <td>@activity.getTitle</td>
                         <td>@activity.getStartTime</td>
                         <td>@activity.getEndTime</td>
+                        <td>@activity.room</td>
+                        <td><a class="btn btn-danger btn-xs pull-right" href="@routes.ActivityController.delete(activity.getId)">Slett</a></td>
                     </tr>
                 }
 

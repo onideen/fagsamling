@@ -13,14 +13,16 @@ import java.util.List;
 public class Activity extends Model implements Comparable<Activity>{
 
     @Id
-    private long id;
+    public long id;
 
     @ManyToOne
-    private Day day;
+    public Day day;
     private String startTime;
     private String endTime;
     private String title;
     private boolean active;
+
+    public String room;
 
     private static Finder<Long, Activity> find = new Finder<Long, Activity>(Long.class, Activity.class);
 
@@ -30,10 +32,6 @@ public class Activity extends Model implements Comparable<Activity>{
 
     public static Activity findById(long id){
         return find.byId(id);
-    }
-
-    public Activity(Day day) {
-        this.day = day;
     }
 
 
