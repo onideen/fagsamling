@@ -1,0 +1,43 @@
+@(day : Day, activity: Activity = new Activity)
+<form class="form-horizontal" action="@routes.ActivityController.edit(activity.getId)#@day.getTitle" method="POST">
+    <input type="hidden" name="day.id" value="@day.getId" />
+    <fieldset>
+        <legend>Legg til ny aktivitet til "@day.getTitle"</legend>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="title">Aktivitetsnavn</label>
+                <input id="title" name="title" type="text" placeholder="Aktivitetsnavn" class="form-control input-md" required="" value="@activity.getTitle">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="room">Rom</label>
+                <input id="room" name="room" type="text" placeholder="Rom" class="form-control input-md" value="@activity.getRoom">
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="control-label" for="start-time">Starter</label>
+                <input id="start-time" name="startTime" type="text" placeholder="Starter" class="form-control input-md" required="" value="@activity.getStartTime">
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="control-label" for="end-time">Slutter</label>
+                <input id="end-time" name="endTime" type="text" placeholder="Slutter" class="form-control input-md" required="" value="@activity.getEndTime">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group last-element">
+                <label class="control-label" for="save-activity"></label>
+                <button id="save-activity" name="save-activity" class="btn btn-primary">@(if(activity.isNew)"Legg til" else "Rediger")</button>
+            </div>
+        </div>
+    </fieldset>
+
+</form>

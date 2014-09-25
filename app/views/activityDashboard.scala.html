@@ -14,48 +14,7 @@
         <div class="day-wrapper" id="@day.getTitle">
             <h3>@day.getTitle <a class="btn btn-danger btn-xs pull-right" href="@routes.DayController.delete(day.getId)">Slett dag</a></h3>
 
-            <form class="form-horizontal" action="@routes.ActivityController.add#@day.getTitle" method="POST">
-                <input type="hidden" name="day.id" value="@day.getId" />
-                <fieldset>
-                    <legend>Legg til ny aktivitet til "@day.getTitle"</legend>
-
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="control-label" for="title">Aktivitetsnavn</label>
-                            <input id="title" name="title" type="text" placeholder="Aktivitetsnavn" class="form-control input-md" required="">
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="control-label" for="room">Rom</label>
-                            <input id="room" name="room" type="text" placeholder="Rom" class="form-control input-md">
-                        </div>
-                    </div>
-
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label class="control-label" for="start-time">Starter</label>
-                            <input id="start-time" name="startTime" type="text" placeholder="Starter" class="form-control input-md" required="">
-                        </div>
-                    </div>
-
-                    <div class="col-xs-6">
-                        <div class="form-group">
-                            <label class="control-label" for="end-time">Slutter</label>
-                            <input id="end-time" name="endTime" type="text" placeholder="Slutter" class="form-control input-md" required="">
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12">
-                        <div class="form-group last-element">
-                            <label class="control-label" for="save-activity"></label>
-                            <button id="save-activity" name="save-activity" class="btn btn-primary">Legg til</button>
-                        </div>
-                    </div>
-                </fieldset>
-
-            </form>
+            @activityForm(day)
 
             <hr>
             <h4>Aktiviteter i "@day.getTitle":</h4>
@@ -67,7 +26,7 @@
                         <th>Fra</th>
                         <th>Til</th>
                         <th>Rom</th>
-                        <th width="10%"></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,8 +35,13 @@
                         <td>@activity.getTitle</td>
                         <td>@activity.getStartTime</td>
                         <td>@activity.getEndTime</td>
-                        <td>@activity.room</td>
-                        <td><a class="btn btn-danger btn-xs pull-right" href="@routes.ActivityController.delete(activity.getId)">Slett</a></td>
+                        <td>@activity.getRoom</td>
+                        <td>
+                            <div class="pull-right">
+                                <a class="btn btn-primary btn-xs" href="@routes.ActivityController.edit(activity.getId)">Edit</a>
+                                <a class="btn btn-danger btn-xs" href="@routes.ActivityController.delete(activity.getId)">Slett</a>
+                            </div>
+                        </td>
                     </tr>
                 }
 

@@ -3,12 +3,10 @@
 
 <div class="col-lg-12">
 
-    <div class="wrapper">
-        <h2>Agenda</h2>
-        <p>Velkommen til fagsamling</p>
-    </div>
+    <h2>Agenda</h2>
+    <p>Velkommen til fagsamling</p>
     @for(day <- days){
-    <div class="day-wrapper">
+    <div class="">
 
         <h4>@day.getTitle</h4>
 
@@ -21,7 +19,7 @@
             <tr>
                 <td>@activity.getStartTime - @activity.getEndTime</td>
                 <td>@activity.getTitle</td>
-                <td>@activity.room</td>
+                <td>@activity.getRoom</td>
             </tr>
             }
 
@@ -29,9 +27,6 @@
         </table>
 
     </div>
-
-
-
 
     }
 </div>

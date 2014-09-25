@@ -22,7 +22,7 @@ public class Activity extends Model implements Comparable<Activity>{
     private String title;
     private boolean active;
 
-    public String room;
+    private String room;
 
     private static Finder<Long, Activity> find = new Finder<Long, Activity>(Long.class, Activity.class);
 
@@ -66,5 +66,25 @@ public class Activity extends Model implements Comparable<Activity>{
 
     public long getId() {
         return id;
+    }
+
+    public boolean isNew(){
+        return id == 0;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
     }
 }

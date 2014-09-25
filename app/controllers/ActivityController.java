@@ -25,8 +25,21 @@ public class ActivityController extends Controller {
     public static Result add() {
         Activity activity = Form.form(Activity.class).bindFromRequest().get();
         activity.save();
-        System.out.println(toJson(activity));
+        return redirect(controllers.routes.ActivityController.dashboard());
+    }
 
+    public static Result form(long id) {
+        return ok(activityEdit.render(Activity.findById(id)));
+    }
+
+    public static Result edit(long id) {
+        System.out.println(id);
+        Activity activity = Form.form(Activity.class).bindFromRequest().get();
+        if(activity.isNew()){
+            activity.save();
+        } else {
+            activity.update();
+        }
         return redirect(controllers.routes.ActivityController.dashboard());
     }
 

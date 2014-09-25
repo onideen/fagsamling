@@ -79,7 +79,7 @@
 
         @for(track<-tracks){
             <div>
-                <h2>@track.getTitle ------ <a href="@routes.TrackController.delete(track.getId)">SLETT</a></h2>
+                <h4>@track.getTitle ------ <a class="btn btn-xs btn-danger" href="@routes.TrackController.delete(track.getId)">Slett</a></h4>
 
 
             </div>

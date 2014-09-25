@@ -1,28 +1,28 @@
 @(tracks: List[Track])
-@main("Admin - Activity") {
+@main("Tracks") {
 
-    <div class="wrapper">
-        <h2>Tracks</h2>
-        <p>Velkommen til fagsamling</p>
+    <h2>Tracks</h2>
+    <p>Velkommen til fagsamling</p>
 
-        @for(track<-tracks){
-            <div class="row">
-                <div class="col-md-3">
-                    @track.getRoom
-                </div>
-                <div class="col-md-5">
-                    <h4>@track.getTitle</h4>
-                    <h5>@track.getInstructors</h5>
-                    <p>@track.getDescription</p>
+    <hr>
 
-                    <a class="btn btn-primary" type="button" href="@routes.TrackController.serve(track.getId)">Se detaljer</a>
-                </div>
-
-
+    @for(track<-tracks){
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                @track.getRoom
             </div>
-            <hr>
+            <div class="col-xs-12 col-md-9">
+                <h4>@track.getTitle</h4>
+                <h5>@track.getInstructors</h5>
+                <p>@track.getDescription</p>
+
+                <a class="btn btn-primary" type="button" href="@routes.TrackController.serve(track.getId)">Se detaljer</a>
+            </div>
+
+
+        </div>
+        <hr>
         }
 
-    </div>
 }
 

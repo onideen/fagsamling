@@ -12,4 +12,7 @@ public class Application extends Controller {
         return ok(views.html.index.render(Day.findAll()));
     }
 
+    public static Result information(){
+        return ok(views.html.information.render());
+    }
 }
