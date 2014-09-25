@@ -1,17 +1,14 @@
 @(days: List[Day])
 @main("Admin - Activity") {
-<div class="wrapper">
-
-
+    <div class="col-xs-12">
         <h1>Legg til dag</h1>
         <form method="POST" action="@routes.DayController.add">
             <input type="text" name="title" placeholder="Tittel">
             <input type="submit" value="Lagre">
         </form>
-</div>
-    <div class="col-lg-12">
+    </div>
     @for(day <- days){
-        <div class="day-wrapper" id="@day.getTitle">
+        <div class="day-wrapper col-xs-12" id="@day.getTitle">
             <h3>@day.getTitle <a class="btn btn-danger btn-xs pull-right" href="@routes.DayController.delete(day.getId)">Slett dag</a></h3>
 
             @activityForm(day)
@@ -49,10 +46,5 @@
             </table>
 
         </div>
-
-
-
-
     }
-    </div>
 }
