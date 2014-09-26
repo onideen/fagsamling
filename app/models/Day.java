@@ -1,5 +1,6 @@
 package models;
 
+import org.apache.commons.lang3.text.WordUtils;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -7,21 +8,24 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by vegaen on 9/22/14.
  */
 @Entity
-public class Day extends Model {
+public class Day extends Model implements Comparable<Day>{
 
     @Id
     private long id;
 
     @Constraints.Required
-    private String title;
-    public int position;
+    private Date date;
+
 
     @OneToMany
     private List<Activity> activities;
@@ -29,7 +33,9 @@ public class Day extends Model {
     private static Finder<Long, Day> find = new Finder<Long, Day>(Long.class, Day.class);
 
     public static List<Day> findAll(){
-        return find.all();
+        List<Day> days = find.all();
+        Collections.sort(days);
+        return days;
     }
 
     public static Day findById(long id) {
@@ -40,12 +46,16 @@ public class Day extends Model {
         return id;
     }
 
-    public String getTitle(){
-        return title;
+    public Date getDate(){
+        return date;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setDate(Date date){
+        this.date = date;
+    }
+
+    public String getTitle(){
+        return WordUtils.capitalize(new SimpleDateFormat("EEEE").format(getDate()));
     }
 
     public void setId(long id){
@@ -55,5 +65,10 @@ public class Day extends Model {
     public List<Activity> getActivities() {
         Collections.sort(activities);
         return activities;
+    }
+
+    @Override
+    public int compareTo(Day o) {
+        return date.compareTo(o.getDate());
     }
 }

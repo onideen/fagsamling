@@ -11,5 +11,6 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   javaWs,
-  "mysql"                   %  "mysql-connector-java"        % "5.1.18"
+  "mysql"                   %  "mysql-connector-java"        % "5.1.18",
+  "org.commonjava.googlecode.markdown4j" % "markdown4j"      % "2.2-cj-1.0"
 )

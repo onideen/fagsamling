@@ -14,10 +14,14 @@ public class DayController extends Controller {
 
 
     public static Result add() {
-        List<Day> days = Day.findAll();
+        Form<Day> dayForm = Form.form(Day.class).bindFromRequest();
 
-        Day day = Form.form(Day.class).bindFromRequest().get();
-        day.position = days.size();
+        if(dayForm.hasErrors()){
+            return badRequest(activityDashboard.render(Day.findAll()
+            ));
+        }
+
+        Day day = dayForm.get();
 
         day.save();
 

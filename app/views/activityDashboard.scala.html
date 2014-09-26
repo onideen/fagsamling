@@ -3,7 +3,7 @@
     <div class="col-xs-12">
         <h1>Legg til dag</h1>
         <form method="POST" action="@routes.DayController.add">
-            <input type="text" name="title" placeholder="Tittel">
+            <input type="date" name="date" placeholder="date">
             <input type="submit" value="Lagre">
         </form>
     </div>
@@ -21,7 +21,6 @@
                     <tr>
                         <th>Aktivitet</th>
                         <th>Fra</th>
-                        <th>Til</th>
                         <th>Rom</th>
                         <th></th>
                     </tr>
@@ -31,7 +30,6 @@
                     <tr>
                         <td>@activity.getTitle</td>
                         <td>@activity.getStartTime</td>
-                        <td>@activity.getEndTime</td>
                         <td>@activity.getRoom</td>
                         <td>
                             <div class="pull-right">

@@ -1,8 +1,12 @@
 package models;
 
+import org.apache.commons.lang3.text.WordUtils;
 import play.db.ebean.Model;
 
 import javax.persistence.*;
+import play.data.format.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,8 +21,8 @@ public class Activity extends Model implements Comparable<Activity>{
 
     @ManyToOne
     public Day day;
+
     private String startTime;
-    private String endTime;
     private String title;
     private boolean active;
 
@@ -48,20 +52,16 @@ public class Activity extends Model implements Comparable<Activity>{
         this.title = title;
     }
 
+    public String getDate(){
+        return WordUtils.capitalize(new SimpleDateFormat("EEEE d. MMM").format(day.getDate()));
+    }
+
     public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setStartTime(String time) {
+        this.startTime = time;
     }
 
     public long getId() {

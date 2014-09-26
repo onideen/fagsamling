@@ -19,11 +19,20 @@ $(document).keydown(function(e) {
     if ( kkeys.toString().indexOf( konami ) >= 0 ) {
 
         $(document).unbind('keydown',arguments.callee);
+        clippy.load('Clippy', function(agent) {
+            // Do anything with the loaded agent
+            agent.show();
+            agent.speak("Hei, jeg skal være din guide gjennom denne fagsamlingen");
+            var animation = function(){
+                setTimeout(function(){
+                    agent.animate();
+                    animation();
+                }, 20000 );
+            };
 
-        alert("KONAMI");
+            animation();
+        });
         // do something awesome
-        $("body").addClass("konami");
-
     }
 
 });
