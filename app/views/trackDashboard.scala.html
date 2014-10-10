@@ -5,86 +5,35 @@
     <div class="day-wrapper">
         <h3>Tracks</h3>
 
-        <form class="form-horizontal" action="@routes.TrackController.add" method="POST">
 
-            <fieldset>
-                <legend>Legg til ny track</legend>
+        @trackForm()
 
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="title">Tittel</label>
-                        <input id="title" name="title" type="text" placeholder="Tittel" class="form-control input-md" required="">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="host">Arrangør</label>
-                        <input id="host" name="host" type="text" placeholder="Arrangør" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="instructors">Kursholdere</label>
-                        <input id="instructors" name="instructors" type="text" placeholder="Kursholdere" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="room">Rom</label>
-                        <input id="room" name="room" type="text" placeholder="Rom" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="format">Format</label>
-                        <input id="format" name="format" type="text" placeholder="Format" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="level">Nivå</label>
-                        <input id="level" name="level" type="text" placeholder="Nivå" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="audience">Forventet publikum</label>
-                        <input id="audience" name="audience" type="text" placeholder="Forventet publikum" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="control-label" for="description">Beskrivelse</label>
-                        <textarea id="description" name="description" type="text" placeholder="Beskrivelse" class="form-control input-md" required=""></textarea>
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="form-group last-element">
-                        <label class="control-label" for="save-activity"></label>
-                        <button id="save-activity" name="save-activity" class="btn btn-primary">Legg til</button>
-                    </div>
-                </div>
-            </fieldset>
-
-        </form>
-
-
-        @for(track<-tracks){
-            <div>
-                <h4>@track.getTitle ------ <a class="btn btn-xs btn-danger" href="@routes.TrackController.delete(track.getId)">Slett</a></h4>
-
-
-            </div>
-
-        }
+        <hr>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tittel</th>
+                        <th>Arrangør</th>
+                        <th>Kursholder</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(track<-tracks){
+                        <tr>
+                            <td>@track.getTitle</td>
+                            <td>@track.getHost</td>
+                            <td>@track.getInstructorsAsString</td>
+                            <td>
+                                <div class="pull-right">
+                                    <a class="btn btn-primary btn-xs" href="@routes.TrackController.edit(track.getId)">Edit</a>
+                                    <a class="btn btn-danger btn-xs" href="@routes.TrackController.delete(track.getId)">Slett</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
     </div>
 

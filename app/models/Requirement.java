@@ -1,9 +1,9 @@
 package models;
 
-import play.db.ebean.Model;
+        import play.db.ebean.Model;
 
-import javax.persistence.*;
-import java.util.List;
+        import javax.persistence.*;
+        import java.util.List;
 
 /**
  * Created by vegaen on 23.09.2014.

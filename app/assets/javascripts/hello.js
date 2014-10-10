@@ -30,7 +30,7 @@ $(document).keydown(function(e) {
                 }, 20000 );
             };
 
-            animation();
+            setTimeout(animation, 10000);
         });
         // do something awesome
     }

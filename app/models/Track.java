@@ -1,9 +1,11 @@
 package models;
 
 import play.db.ebean.Model;
+import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,14 +19,25 @@ public class Track extends Model {
     private long id;
 
     private String title;
-    private String instructors;
+
+    @OneToMany(mappedBy = "track", cascade = CascadeType.ALL)
+    private List<Instructor> instructors;
+
     private String host;
     private String format;
     private String level;
     private String room;
+    private String equipments;
+
+    @Column(columnDefinition  = "TEXT")
     private String description;
+
     private String audience;
-    private List<Requirement> requirements;
+//    private List<Requirement> requirements;
+
+    public Track(){
+        this.instructors = new ArrayList<>();
+    }
 
     private static Finder<Long, Track> find = new Finder<Long, Track>(Long.class, Track.class);
 
@@ -92,15 +105,40 @@ public class Track extends Model {
         this.audience = audience;
     }
 
+    public void setId(long id){
+        this.id = id;
+    }
+
     public long getId() {
         return id;
     }
 
-    public String getInstructors() {
+    public boolean isNew(){
+        return id == 0;
+    }
+
+    public String getInstructorsAsString() {
+        return StringUtils.join(instructors, ",");
+    }
+
+    public List<Instructor> getInstructors(){
         return instructors;
     }
 
-    public void setInstructors(String instructors) {
+    public void setInstructors(List<Instructor> instructors) {
         this.instructors = instructors;
     }
+
+//    public String getEquipments() {
+//        return equipments;
+//    }
+//
+//    public String[] getEquipmentAsArray(){
+//        return equipments.split(";");
+//    }
+
+    public void setEquipments(String equipments) {
+        this.equipments = equipments;
+    }
+
 }

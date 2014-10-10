@@ -1,0 +1,78 @@
+@(track : Track = new Track())
+<form class="form-horizontal" action="@routes.TrackController.edit(track.getId)" method="POST">
+    <input type="hidden" name="id" value="@track.getId" />
+    <fieldset>
+        <legend>Legg til ny track</legend>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="title">Tittel</label>
+                <input value="@track.getTitle" id="title" name="title" type="text" placeholder="Tittel" class="form-control input-md" required="">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="host">Arrangør</label>
+                <input value="@track.getHost" id="host" name="host" type="text" placeholder="Arrangør" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="instructors">Kursholdere</label>
+                <input value="@track.getInstructorsAsString" id="instructors" name="instructors" type="text" placeholder="Kursholdere" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="room">Rom</label>
+                <input value="@track.getRoom" id="room" name="room" type="text" placeholder="Rom" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <label class="control-label" for="format">Format</label>
+                <input value="@track.getFormat" id="format" name="format" type="text" placeholder="Format" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <label class="control-label" for="level">Nivå</label>
+                <input value="@track.getLevel" id="level" name="level" type="text" placeholder="Nivå" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="equipments">Utstyr</label>
+                <input value="" id="equipments" name="equipments" type="text" placeholder="Utstyr" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="audience">Forventet publikum</label>
+                <textarea id="audience" name="audience" placeholder="Forventet publikum" class="form-control input-md">@track.getAudience</textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="description">Beskrivelse</label>
+                <textarea id="description" name="description" rows="6" placeholder="Beskrivelse" class="form-control input-md" required="">@track.getDescription</textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group last-element">
+                <label class="control-label" for="save-activity"></label>
+                <button id="save-activity" name="save-activity" class="btn btn-primary">@(if(track.isNew)"Legg til" else "Rediger")</button>
+            </div>
+        </div>
+    </fieldset>
+
+</form>

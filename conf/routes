@@ -19,6 +19,8 @@ GET         /admin/day/delete             controllers.DayController.delete(id : 
 GET         /admin/tracks                 controllers.TrackController.dashboard()
 POST        /admin/tracks/add             controllers.TrackController.add()
 GET         /admin/tracks/delete          controllers.TrackController.delete(id : Long)
+GET         /admin/tracks/edit            controllers.TrackController.form(id: Long)
+POST        /admin/tracks/edit            controllers.TrackController.edit(id: Long)
 
 
 # Map static resources from the /public folder to the /assets URL path
