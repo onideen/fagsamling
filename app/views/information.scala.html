@@ -1,9 +1,21 @@
-@main("Informasjon") {
+@main(info: Info) {
 
 <div class="col-xs-12">
     <h2>Informasjon</h2>
     <p>Mer informasjon kommer senere.. Følg med</p>
 
 </div>
+
+
+<div>
+    <strong>Navn</strong>
+    <p>@info.getName</p>
+</div>
+
+  <div>
+      <strong>Info</strong>
+      <p>@info.getInfo</p>
+  </div>
+
 }
 
