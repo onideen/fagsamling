@@ -3,29 +3,20 @@
 
 <div class="col-xs-12">
 
-    <h2>Agenda</h2>
+    <h2 class="title">Agenda</h2>
     <p>Velkommen til fagsamling</p>
     @for(day <- days){
-    <div class="">
+    <div class="main">
 
-        <h4>@day.getTitle</h4>
+        <h2>@day.getTitle</h2>
 
-        <table class="table table-hover">
-            <thead>
-
-            </thead>
-            <tbody>
+        <div class="table">
             @for(activity <- day.getActivities){
-            <tr>
-                <td>@activity.getStartTime</td>
-                <td>@activity.getTitle</td>
-                <td>@activity.getRoom</td>
-            </tr>
+            <div class="time">@activity.getStartTime</div>
+            <a href="#" class="col1">@activity.getTitle</a>
+            <a href="#" class="col2">@activity.getRoom</a>
             }
-
-            </tbody>
-        </table>
-
+        </div>
     </div>
 
     }
