@@ -1,11 +1,12 @@
 package models;
 
+import org.markdown4j.Markdown4jProcessor;
 import play.db.ebean.Model;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,10 +31,16 @@ public class Track extends Model {
     private String equipments;
 
     @Column(columnDefinition  = "TEXT")
-    private String description;
+    private String summary;
 
     private String audience;
-//    private List<Requirement> requirements;
+    private List<Requirement> requirements;
+
+    @Column(columnDefinition = "TEXT")
+    private String htmlContent;
+
+    @Column(columnDefinition = "TEXT")
+    private String markdownContent;
 
     public Track(){
         this.instructors = new ArrayList<>();
@@ -89,12 +96,12 @@ public class Track extends Model {
         this.room = room;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getAudience() {
@@ -129,16 +136,30 @@ public class Track extends Model {
         this.instructors = instructors;
     }
 
-//    public String getEquipments() {
-//        return equipments;
-//    }
-//
-//    public String[] getEquipmentAsArray(){
-//        return equipments.split(";");
-//    }
+    public void setContent(String content) {
+        this.markdownContent = content;
+        try {
+            this.htmlContent = new Markdown4jProcessor().process(content);
+        } catch (IOException e) {}
+    }
+
+    public String getEquipments() {
+        return equipments;
+    }
+
+    public String[] getEquipmentAsArray(){
+        return equipments.split(";");
+    }
 
     public void setEquipments(String equipments) {
         this.equipments = equipments;
     }
 
+    public String getHtmlContent() {
+        return htmlContent;
+    }
+
+    public String getMarkdownContent() {
+        return markdownContent;
+    }
 }

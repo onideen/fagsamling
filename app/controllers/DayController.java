@@ -16,7 +16,10 @@ public class DayController extends Controller {
     public static Result add() {
         Form<Day> dayForm = Form.form(Day.class).bindFromRequest();
 
+        System.out.println("here");
+
         if(dayForm.hasErrors()){
+            System.out.println("ERRORRORS");
             return badRequest(activityDashboard.render(Day.findAll()
             ));
         }

@@ -19,7 +19,7 @@ public class Instructor extends Model {
     private String name;
     private String imageUrl;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Track track;
 
     private static Finder<Long, Instructor> find = new Model.Finder<Long, Instructor>(Long.class, Instructor.class);

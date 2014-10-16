@@ -20,22 +20,25 @@ public class InstructorController extends Controller {
     }
 
     public static Result insForm(long id) {
-        Form<Instructor> iForm = form(Instructor.class);
-        iForm.fill(Instructor.findById(id));
+        Form<Instructor> iForm = form(Instructor.class).fill(Instructor.findById(id));
 
         return ok(instructorEdit.render(iForm));
     }
 
-    public static Result edit(long id) {
+    public static Result edit() {
         Form<Instructor> instructorForm = form(Instructor.class).bindFromRequest();
 
         if(instructorForm.hasErrors()){
-            return badRequest(views.html.instructorEdit.render(instructorForm
-            ));
+            return badRequest(views.html.instructorEdit.render(instructorForm));
         }
 
         Instructor instructor = instructorForm.get();
-        instructor.save();
+        if (Instructor.findById(instructor.getId()) != null){
+            instructor.update();
+        }
+        else {
+            instructor.save();
+        }
 
         return redirect(routes.InstructorController.dashboard());
     }
