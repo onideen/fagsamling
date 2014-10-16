@@ -21,7 +21,10 @@ POST        /admin/tracks/add             controllers.TrackController.add()
 GET         /admin/tracks/delete          controllers.TrackController.delete(id : Long)
 GET         /admin/tracks/edit            controllers.TrackController.form(id: Long)
 POST        /admin/tracks/edit            controllers.TrackController.edit(id: Long)
-
+GET         /admin/instructors            controllers.InstructorController.dashboard()
+GET         /admin/instructors/edit       controllers.InstructorController.insForm(id: Long)
+POST        /admin/instructors/edit       controllers.InstructorController.edit(id: Long)
+GET         /admin/instructors/delete     controllers.InstructorController.delete(id : Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                 controllers.Assets.at(path="/public", file)

@@ -3,6 +3,7 @@ package models;
 import play.db.ebean.Model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by engenveg on 02.10.2014.
@@ -39,6 +40,10 @@ public class Instructor extends Model {
 
     public static Instructor findByName(String instructorName) {
         return find.where().eq("name", instructorName.trim()).findUnique();
+    }
+
+    public static List<Instructor> findAll(){
+        return find.findList();
     }
 
     public void setName(String name) {
