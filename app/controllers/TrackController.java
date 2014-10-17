@@ -42,7 +42,7 @@ public class TrackController extends Controller {
 
     public static Result edit(long id) {
         System.out.println(id);
-        Track track = Form.form(Track.class).bindFromRequest("id", "title", "host", "room", "format", "level", "equipment", "audience", "description").get();
+        Track track = Form.form(Track.class).bindFromRequest("id", "title", "host", "room", "format", "level", "equipment", "audience", "content", "summary").get();
 
         String[] instructorNames = request().body().asFormUrlEncoded().get("instructors")[0].split(",");
 

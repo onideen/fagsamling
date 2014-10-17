@@ -48,8 +48,8 @@
 
         <div class="col-xs-12">
             <div class="form-group">
-                <label class="control-label" for="equipments">Utstyr</label>
-                <input value="" id="equipments" name="equipments" type="text" placeholder="Utstyr" class="form-control input-md">
+                <label class="control-label" for="equipment">Utstyr</label>
+                <input value="@track.getEquipment" id="equipment" name="equipment" type="text" placeholder="Utstyr" class="form-control input-md">
             </div>
         </div>
 
@@ -62,8 +62,15 @@
 
         <div class="col-xs-12">
             <div class="form-group">
-                <label class="control-label" for="summary">Beskrivelse</label>
-                <textarea id="summary" name="summary" rows="6" placeholder="Beskrivelse" class="form-control input-md" required="">@track.getSummary</textarea>
+                <label class="control-label" for="summary">Sammendrag</label>
+                <textarea id="summary" name="summary" rows="6" placeholder="Sammendrag" class="form-control input-md" required="">@track.getSummary</textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label" for="content">Innhold</label>
+                <textarea id="content" name="content" rows="6" placeholder="Innhold" class="form-control input-md" required="">@track.getMarkdownContent</textarea>
             </div>
         </div>
 

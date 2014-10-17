@@ -28,7 +28,7 @@ public class Track extends Model {
     private String format;
     private String level;
     private String room;
-    private String equipments;
+    private String equipment;
 
     @Column(columnDefinition  = "TEXT")
     private String summary;
@@ -143,16 +143,16 @@ public class Track extends Model {
         } catch (IOException e) {}
     }
 
-    public String getEquipments() {
-        return equipments;
+    public String getEquipment() {
+        return equipment;
     }
 
-    public String[] getEquipmentAsArray(){
-        return equipments.split(";");
-    }
+//    public String[] getEquipmentAsArray(){
+//        return equipment.split(";");
+//    }
 
-    public void setEquipments(String equipments) {
-        this.equipments = equipments;
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
     }
 
     public String getHtmlContent() {
