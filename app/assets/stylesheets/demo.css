@@ -43,7 +43,7 @@ nav {
 
 .navbar .container, .navbar-default
 {
-   background:#2d2d2d;
+   background:#0079AA;
        color:#fff !important;
 }
 
@@ -137,9 +137,15 @@ h2,
 
 .col-xs-12 .title
 {
-    font-size: 50px;
+    font-size: 40px;
     margin: 48px 0% 16px;
     padding-bottom:20px;
+}
+
+.col-xs-12 > p
+{
+    font-size:20px;
+    margin-top:-10px;
 }
 
 .table
@@ -235,28 +241,29 @@ p a:active {
 .time {
 	background: none;
 	clear: left;
-	color: #CC675B;
+	color: #C17BB4;
 	padding: 12 0 8px;
 	text-align: right;
-	font-size:25px;
+	font-size:23px;
 }
 .col1 {
 	clear: right;
 	width: 50%;
-    font-size: 22px;
+    font-size: 17px;
 }
 
 .col2
 {
     clear: right;
-    width:15%;
-    font-size:22px;
+    width: 10%;
+    font-size: 25px;
     display: block;
     float: left;
-    margin: 2px 0.25%;
+    margin: 2px -3px;
     overflow: hidden;
-    padding: 12px 1% 8px;
-    color: #444;
+    padding: 12px 2.5% 8px;
+    color: #216279;
+    background: #F7941E;
 }
 
 .col3 {
@@ -267,15 +274,15 @@ p a:active {
 .col3:link,
 .col3:visited
  {
-	background: #CC675B;
-	color: #444;
+	background: #0079AA;
+	color: #fff;
 }
 
 .col1:hover,
 .col3:hover,
 .col1:focus,
 .col3:focus {
-	background: #fff;
+	background: #F7941E;
 }
 
 .col1:active,
