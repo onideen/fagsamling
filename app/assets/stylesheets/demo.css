@@ -1,34 +1,17 @@
-/* CSS kode fra visma danmark*
-@font-face {
-    font-family: 'PFBeauSansProLight';
-    src: url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Light.eot'); /* IE9 Compat Modes */
-    src: url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Light.woff') format('woff'), /* Modern Browsers */
-         url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Light.ttf') format('truetype'); /* Safari, Android, iOS */
-         url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Light.svg#PFBeauSansPro-Light') format('svg'), /* Legacy iOS */
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
-}
-@font-face {
-    font-family: 'http://visma-event.dk/fagdag2014/PFBeauSansProThin';
-    src: url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Thin.eot'); /* IE9 Compat Modes */
-    src: url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Thin.woff') format('woff'), /* Modern Browsers */
-         url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Thin.ttf') format('truetype'); /* Safari, Android, iOS */
-         url('http://visma-event.dk/fagdag2014/PFBeauSansPro-Thin.svg#PFBeauSansPro-Thin') format('svg'), /* Legacy iOS */
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
-}
+/* CSS kode fra visma danmark */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
 body {
 	/* background: #fff url(src/bg-main.png); */
 	background: #F2F1ED;
 	color: #444;
 	margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    	font-size: 16px;
+    	line-height: 24px;
 }
+
 header {
 	margin: 0 2% 0 2%;
 	overflow: hidden;
@@ -61,7 +44,7 @@ nav {
 
 .navbar-default .navbar-brand{
     color:#F5F5F5;
-    font-family:"Open Sans",sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navbar-default .navbar-nav>li>a:hover
@@ -77,18 +60,18 @@ nav {
 
 
 .navbar-default .navbar-toggle {
-    background: #000;
+    background: #C17BB4;
     border:none;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
 {
-    background:red;
+
 }
 
 .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar
 {
-    background:#fff;
+
 }
 
 .navbar-default .navbar-toggle:active
@@ -98,17 +81,33 @@ nav {
 
 
 .navbar-default .navbar-toggle .icon-bar {
-    background: rgb(202, 197, 197);
+    background: #fff;
 }
 
 
 
 .container
 {
+    padding-left:0;
+    padding-right:0;
     background: #fff;
     color:#333;
     font-family: "Open Sans",sans-serif;
 
+}
+.col-xs-12
+{
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.main{
+    margin-left:4%;
+}
+
+.row {
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 article {
@@ -118,34 +117,41 @@ article {
 	width: 80%;
 }
 
-body {
-	font-family: 'PFBeauSansProLight';
-	font-size: 16px;
-	line-height: 24px;
-}
 
 .title,
 h1,
 h2,
 .table {
-	font-family: 'PFBeauSansProThin', Verdana;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	font-weight: normal;
 	line-height: 24px;
 	margin: 0;
 }
 
+
+.top
+{
+    background: #0079AA;
+    color: white;
+    padding: 10px 3%;
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: 5%;
+}
+
 .col-xs-12 .title
 {
     font-size: 40px;
-    margin: 48px 0% 16px;
+    margin: 48px 1% 16px;
     padding-bottom:20px;
 }
 
-.col-xs-12 > p
+.welcometext
 {
     font-size:20px;
     margin-top:-10px;
+    margin-left:1%;
 }
 
 .table
@@ -154,10 +160,11 @@ h2,
 }
 
 h1 {
-	font-size: 60px;
+	font-size: 30px;
 	line-height: 60px;
-	margin: 0 12% 12px;
+	margin: 0 0% 12px;
 }
+
 h2 {
 	font-size: 30px;
 	line-height: 36px;
@@ -228,6 +235,12 @@ p a:active {
 	overflow: hidden;
 }
 
+.daytitle
+{
+    color: #C17BB4;
+    font-size:35px;
+}
+
 .time,
 .col1,
 .col3
@@ -249,21 +262,23 @@ p a:active {
 .col1 {
 	clear: right;
 	width: 50%;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .col2
 {
     clear: right;
-    width: 10%;
-    font-size: 25px;
+    width: 12%;
+    font-size: 22px;
     display: block;
     float: left;
     margin: 2px -3px;
     overflow: hidden;
-    padding: 12px 2.5% 8px;
-    color: #216279;
-    background: #F7941E;
+    padding: 12px 0% 8px;
+    color: #fff;
+    background: #C17BB4;
+    text-align: center;
+
 }
 
 .col3 {
@@ -275,14 +290,19 @@ p a:active {
 .col3:visited
  {
 	background: #0079AA;
-	color: #fff;
+	    color: rgba(255,255,255,.75);
+        letter-spacing: .02em;
+        word-spacing: 2px;
+    text-decoration:none;
+
 }
 
 .col1:hover,
 .col3:hover,
 .col1:focus,
 .col3:focus {
-	background: #F7941E;
+	background: #C17BB4;
+	color:#fff;
 }
 
 .col1:active,
@@ -329,3 +349,67 @@ p a:active {
 	font-size: 32px;
 	line-height: 40px;
 }
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #C17BB4;
+    border:none;
+    padding: 12px 18px;
+    border-radius:0;
+    font-size:18px;
+}
+
+.btn-primary:hover
+{
+    background:#0079AAa;
+}
+
+
+/* Large desktop */
+@media (min-width: 1200px) {  }
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+     .col1 {
+            width: 65%;
+        }
+
+        .col2 {
+            width: 20%;
+        }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .col1 {
+        width: 65%;
+    }
+
+    .col2 {
+        width: 20%;
+    }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .main {
+        margin-left:0px;
+    }
+
+     .time{
+        font-size:20px;
+     }
+     .col1 {
+            width: 65%;
+            font-size:16px;
+            padding-left:10px;
+        }
+
+        .col2 {
+            width: 20%;
+            font-size:18px;
+        }
+
+ }
