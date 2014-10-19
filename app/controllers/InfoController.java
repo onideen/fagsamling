@@ -1,6 +1,6 @@
 package controllers;
 
-//import models.Info;
+import models.Information;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -15,6 +15,7 @@ import javax.sound.midi.ControllerEventListener;
 public class InfoController extends Controller {
 
 
-
-
+	public static Result information(){
+        return ok(views.html.information.render());
+    }
 }

@@ -6,7 +6,7 @@
 GET         /                             controllers.Application.index()
 GET         /tracks                       controllers.TrackController.getTracks()
 GET         /track/:id                    controllers.TrackController.serve(id: Long)
-GET         /info                         controllers.Application.information()
+GET         /info                         controllers.InfoController.information()
 
 GET         /admin/activity               controllers.ActivityController.dashboard()
 POST        /admin/activity/add           controllers.ActivityController.add()
