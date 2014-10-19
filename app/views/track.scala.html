@@ -1,8 +1,13 @@
 @(track: Track)
 @main(track.getTitle) {
 
-    <h2>@track.getTitle</h2>
+
+    <div class="top">
+        <h2>@track.getTitle</h2>
+
+    </div>
     <hr>
+<div class="main">
 
     <div>
         <strong>Arrangør</strong>
@@ -33,6 +38,7 @@
         <strong>Forventet publikum</strong>
         <p>@track.getAudience</p>
     </div>
+</div>
 
 }
 

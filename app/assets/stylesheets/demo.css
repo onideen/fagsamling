@@ -90,6 +90,7 @@ nav {
 {
     padding-left:0;
     padding-right:0;
+
     background: #fff;
     color:#333;
     font-family: "Open Sans",sans-serif;
@@ -97,8 +98,23 @@ nav {
 }
 .col-xs-12
 {
-    padding-left:0px;
-    padding-right:0px;
+  padding-left:0;
+    padding-right:0;
+
+}
+
+.col-xs-12.custom
+{
+    margin-bottom:40px;
+}
+
+.col-xs-12 > form
+{
+    margin-left: 2%;
+}
+
+legend {
+    font-size: 18px;
 }
 
 .main{
@@ -162,7 +178,7 @@ h2,
 h1 {
 	font-size: 30px;
 	line-height: 60px;
-	margin: 0 0% 12px;
+	margin: 0 2% 12px;
 }
 
 h2 {
@@ -219,6 +235,28 @@ p a:active {
 	background: #8a0027;
 }
 
+
+.main strong
+{
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 20px 10px 15px;
+    background: rgb(250, 193, 255);
+    margin-right: -4px;
+}
+
+.main p
+{
+    margin: 0% 0% 10px;
+    font-size: 18px;
+    display: inline-flex;
+    padding: 10px;
+    background: rgba(0, 121, 170, 0.83);
+    margin-right: 10%;
+    color: rgba(255, 255, 255, 0.79);
+    letter-spacing: .03em;
+}
 
 
 .sub {
@@ -368,6 +406,44 @@ p a:active {
 }
 
 
+.btn-xs, .btn-group-xs>.btn {
+    padding: 1px 5px;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 3px;
+    border-radius: 0;
+    padding: 5px 15px;
+    border: none;
+
+ }
+
+ .btn-primary.btn-xs
+  {
+    background: #428bca;
+  }
+
+
+  .day-wrapper {
+        margin-left: 20px;
+        width: 96%;
+        padding: 15px;
+  }
+
+  .form-horizontal .form-group
+  {
+    margin-left:0px;
+    margin-right:0px;
+  }
+
+  .form-control {
+    width: 50%;
+  }
+
+  .col-md-6 {
+    width: 100%;
+  }
+
+
 /* Large desktop */
 @media (min-width: 1200px) {  }
 
@@ -422,9 +498,9 @@ p a:active {
  }
 
 
- @media (max-width: 440px) {
+ @media (min-width: 320px) and (max-width: 440px) {
      .col1 {
-                width: 80%;
+                width: 76%;
                 font-size: 23px;
             }
 
