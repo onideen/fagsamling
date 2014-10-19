@@ -263,6 +263,7 @@ p a:active {
 	clear: right;
 	width: 50%;
     font-size: 20px;
+    line-height:30px;
 }
 
 .col2
@@ -278,6 +279,7 @@ p a:active {
     color: #fff;
     background: #C17BB4;
     text-align: center;
+    line-height:30px;
 
 }
 
@@ -307,7 +309,7 @@ p a:active {
 
 .col1:active,
 .col3:active {
-	background: #fff;
+
 }
 
 .light:link,
@@ -394,22 +396,40 @@ p a:active {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
+    .navbar
+    {
+        display:none;
+    }
+
     .main {
         margin-left:0px;
     }
 
      .time{
-        font-size:20px;
+        font-size:30px;
      }
      .col1 {
-            width: 65%;
-            font-size:16px;
-            padding-left:10px;
+            width: 80%;
+            font-size: 25px;
+            padding: 10px 15px;
         }
 
         .col2 {
-            width: 20%;
-            font-size:18px;
+            display:none;
         }
+
+ }
+
+
+ @media (max-width: 440px) {
+     .col1 {
+                width: 80%;
+                font-size: 23px;
+            }
+
+     .time{
+             font-size:27px;
+          }
 
  }
