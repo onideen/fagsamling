@@ -31,12 +31,19 @@
 
     <div>
         <strong>Beskrivelse</strong>
-        <p>@track.getSummary</p>
+        @Html(track.getHtmlContent)
     </div>
 
     <div>
         <strong>Forventet publikum</strong>
         <p>@track.getAudience</p>
+    </div>
+    <div>
+        @for(instructor<-track.getInstructors){
+            @instructor.getName
+
+            <img src="@instructor.getImageUrl" alt="@instructor.getName">
+        }
     </div>
 </div>
 
