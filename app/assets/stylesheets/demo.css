@@ -334,7 +334,15 @@ p a:active {
         letter-spacing: .02em;
         word-spacing: 2px;
     text-decoration:none;
+}
 
+.col2:hover{
+    text-decoration:none;
+    color:white;
+}
+
+.col2:empty{
+    display:none;
 }
 
 .col1:hover,
