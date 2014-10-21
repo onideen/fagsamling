@@ -48,6 +48,11 @@ public class Information extends Model{
     public Long getId(){
     	return id;
     }
+    private static Finder<Long, Information> find = new Finder<Long, Information>(Long.class, Information.class);
+
+    public static List<Information> findAll() {
+        return find.all();
+    }
     
 	
 	
