@@ -55,7 +55,7 @@ public class Day extends Model implements Comparable<Day>{
     }
 
     public String getTitle(){
-        return WordUtils.capitalize(new SimpleDateFormat("EEEE").format(getDate()));
+        return WordUtils.capitalize(new SimpleDateFormat("EEEE", new Locale("no", "NO")).format(getDate()));
     }
 
     public void setId(long id){
