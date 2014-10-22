@@ -26,7 +26,7 @@ nav {
 
 .navbar .container, .navbar-default
 {
-   background:rgb(109, 186, 204);
+   background:rgba(0, 121, 170, 0.76);
        color:#fff !important;
 }
 
@@ -89,7 +89,6 @@ nav {
     padding-left:0;
     padding-right:0;
     padding-right:0;
-    background:rgb(232, 239, 239);
     color:#333;
     font-family: "Open Sans",sans-serif;
 }
@@ -144,7 +143,7 @@ h2,
 
 .top
 {
-    background: rgb(109, 186, 204);
+    background: rgba(0, 121, 170, 0.76);
     color: white;
     padding: 10px 3%;
     width: 100%;
@@ -239,7 +238,8 @@ p a:active {
     display: inline-block;
     padding: 10px 20px 10px 15px;
     background: rgb(250, 193, 255);
-    margin-right: -4px;
+    margin-right: -5px;
+    color:#775D7C;
 }
 
 .main p
@@ -248,7 +248,7 @@ p a:active {
     font-size: 18px;
     display: inline-flex;
     padding: 10px;
-    background: rgba(0, 121, 170, 0.83);
+    background: rgba(64, 101, 115, 0.76);
     margin-right: 10%;
     color: rgba(255, 255, 255, 0.79);
     letter-spacing: .03em;
@@ -339,6 +339,11 @@ p a:active {
 .col2:empty{
     display:none;
 }
+
+p:empty{
+    background:none;
+}
+
 
 .col1:hover,
 .col3:hover,
@@ -445,6 +450,14 @@ p a:active {
   .col-md-6 {
     width: 100%;
   }
+
+    .persons
+    {
+        width:150px;
+        height:150px;
+        border-radius:100px;
+        border:5px solid rgba(64, 101, 115, 0.31);
+    }
 
 
 /* Large desktop */
