@@ -473,8 +473,6 @@ p:empty{
             border-radius:100px;
             border:5px solid rgba(64, 101, 115, 0.31);
         }
-
-
 /* Large desktop */
 @media (min-width: 1200px) {  }
 
@@ -491,6 +489,8 @@ p:empty{
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+
+
     .col1 {
         width: 65%;
     }
@@ -531,10 +531,18 @@ p:empty{
 
                   }
 
+    .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
+    margin-right: 0px;
+    margin-left: -15px;
+    }
+
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
+
+
 
     .navbar
     {
@@ -578,6 +586,8 @@ p:empty{
 
 
  @media (min-width: 320px) and (max-width: 440px) {
+
+
          .col1 {
                 width: 76%;
                 font-size: 20px;
