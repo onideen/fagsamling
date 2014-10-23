@@ -23,10 +23,10 @@ header {
     color:# !important;
 }
 
-.navbar-default
+ .navbar-default
 {
    background:rgba(0, 121, 170, 0.76);
-       color:#fff !important;
+   color:#fff !important;
 }
 
 .navbar-nav>li>a:hover
@@ -88,7 +88,9 @@ header {
     padding-right:0;
     color:#333;
     font-family: "Open Sans",sans-serif;
+    background:none;
 }
+
 .col-xs-12
 {
   padding-left:0;
@@ -300,18 +302,16 @@ p a:active {
 
 .col2
 {
-    clear: right;
-    width: 12%;
-    font-size: 22px;
-    display: block;
-    float: left;
-    margin: 2px -3px;
-    overflow: hidden;
-    padding: 12px 0% 8px;
-    color: #fff;
-    background: #C17BB4;
-    text-align: center;
-    line-height:30px;
+   clear: right;
+   font-size: 22px;
+   float: left;
+   margin: 2px -3px;
+   overflow: hidden;
+   padding: 12px 10px 8px;
+   color: #fff;
+   background: #C17BB4;
+   text-align: center;
+   line-height: 30px;
 }
 
 .col3 {
