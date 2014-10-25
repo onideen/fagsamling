@@ -19,6 +19,13 @@ header {
 
 }
 
+.navbar
+{
+    border:none;
+    border-radius:0px;
+
+}
+
 .navbar-brand:hover {
     color:# !important;
 }
@@ -37,6 +44,13 @@ header {
 .navbar-default .navbar-nav>li>a
  {
     color:#fff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+ }
+
+ .navbar-default .navbar-nav>.active>a
+ {
+    background:rgb(232, 239, 239);
  }
 
 
@@ -540,6 +554,12 @@ p:empty{
     .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
     margin-right: 0px;
     margin-left: -15px;
+    }
+
+    .navbar-collapse
+    {
+        border:none;
+        box-shadow:none;
     }
 
 }
