@@ -8,13 +8,14 @@ import javax.persistence.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 /**
  * Created by vegaen on 9/22/14.
  */
 
 @Entity
-public class Track extends Model {
+public class Track extends Model implements Comparable<Track>{
 
     @Id
     private long id;
@@ -46,10 +47,17 @@ public class Track extends Model {
         this.instructors = new ArrayList<>();
     }
 
+    @Override
+    public int compareTo(Track other) {
+        return getTitle().compareTo(other.getTitle());
+    }
+
     private static Finder<Long, Track> find = new Finder<Long, Track>(Long.class, Track.class);
 
     public static List<Track> findAll() {
-        return find.all();
+        List<Track> tracks = find.all();
+        Collections.sort(tracks);
+        return tracks;
     }
 
     public static Track findById(long id) {
