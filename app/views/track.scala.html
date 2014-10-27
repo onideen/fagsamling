@@ -38,11 +38,11 @@
         <strong>Forventet publikum</strong>
         <p>@track.getAudience</p>
     </div>
-    <div>
+    <div class="persons">
         @for(instructor<-track.getInstructors){
-            @instructor.getName
 
-            <img src="@instructor.getImageUrl" alt="@instructor.getName">
+            <span class="persons span" >@instructor.getName</span>
+            <img class="persons img" src="@instructor.getImageUrl" alt="@instructor.getName">
         }
     </div>
 </div>

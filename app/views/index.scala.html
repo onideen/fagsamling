@@ -15,8 +15,8 @@
         <div class="table">
             @for(activity <- day.getActivities){
             <div class="time">@activity.getStartTime</div>
-            <a href="#" class="col1">@activity.getTitle</a>
-            <a href="#" class="col2">@activity.getRoom</a>
+            <div href="#" class="col1">@activity.getTitle</div>
+            <div href="#" class="col2">@activity.getRoom</div>
             }
         </div>
     </div>

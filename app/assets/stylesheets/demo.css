@@ -18,29 +18,42 @@ header {
 	text-align: left;
 
 }
-nav {
-	/*display: block;
-	float: right;
-	*/
-}
 
-.navbar .container, .navbar-default
+.navbar
 {
-   background:rgb(109, 186, 204);
-       color:#fff !important;
+    border:none;
+    border-radius:0px;
+
 }
 
+.navbar-brand:hover {
+    color:# !important;
+}
+
+ .navbar-default
+{
+   background:rgba(0, 121, 170, 0.76);
+   color:#fff !important;
+}
+
+.navbar-nav>li>a:hover
+{
+     background:#C17BB4 !important;
+     color:#fff !important;
+}
 .navbar-default .navbar-nav>li>a
-{
+ {
     color:#fff;
-}
+    padding-bottom: 20px;
+    padding-top: 20px;
+ }
 
-.navbar-default .navbar-nav>.active>a
-{
-    background: #fff;
-    color: #2d2d2d;
+ .navbar-default .navbar-nav>.active>a
+ {
+    background:rgb(232, 239, 239);
+ }
 
-}
+
 
 .navbar-default .navbar-brand{
     color:#F5F5F5;
@@ -62,21 +75,19 @@ nav {
 .navbar-default .navbar-toggle {
     background: #C17BB4;
     border:none;
+    border-radius:0px;
+    margin-right: 20px;
+    padding: 10px 20px;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
 {
-
-}
-
-.navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar
-{
-
+    background-color:#DF26BD;
 }
 
 .navbar-default .navbar-toggle:active
 {
-  background:#000;
+  background:#C17BB4;
 }
 
 
@@ -89,10 +100,11 @@ nav {
     padding-left:0;
     padding-right:0;
     padding-right:0;
-    background:rgb(232, 239, 239);
     color:#333;
     font-family: "Open Sans",sans-serif;
+    background:none;
 }
+
 .col-xs-12
 {
   padding-left:0;
@@ -144,7 +156,7 @@ h2,
 
 .top
 {
-    background: rgb(109, 186, 204);
+    background: rgba(0, 121, 170, 0.76);
     color: white;
     padding: 10px 3%;
     width: 100%;
@@ -193,6 +205,7 @@ p.title {
 	margin: 0 0% 20px;
 }
 
+
 footer.col-xs-12 p{
     margin: 0 2% 12px;
     float: right;
@@ -239,7 +252,8 @@ p a:active {
     display: inline-block;
     padding: 10px 20px 10px 15px;
     background: rgb(250, 193, 255);
-    margin-right: -4px;
+    margin-right: -5px;
+    color:rgba(119, 93, 124, 0.94);
 }
 
 .main p
@@ -248,7 +262,7 @@ p a:active {
     font-size: 18px;
     display: inline-flex;
     padding: 10px;
-    background: rgba(0, 121, 170, 0.83);
+    background: rgba(64, 101, 115, 0.76);
     margin-right: 10%;
     color: rgba(255, 255, 255, 0.79);
     letter-spacing: .03em;
@@ -302,27 +316,23 @@ p a:active {
 
 .col2
 {
-    clear: right;
-    width: 12%;
-    font-size: 22px;
-    display: block;
-    float: left;
-    margin: 2px -3px;
-    overflow: hidden;
-    padding: 12px 0% 8px;
-    color: #fff;
-    background: #C17BB4;
-    text-align: center;
-    line-height:30px;
+   clear: right;
+   font-size: 20px;
+   float: left;
+   margin: 2px -3px;
+   overflow: hidden;
+   padding: 12px 10px 8px;
+   color: #fff;
+   background: #C17BB4;
+   text-align: center;
+   line-height: 30px;
 }
 
 .col3 {
 	width: 27%;
 }
-.col1:link,
-.col1:visited,
-.col3:link,
-.col3:visited
+.col1,
+.col3
  {
 	background: rgb(109, 186, 204);
 	    color: #fff;
@@ -340,6 +350,11 @@ p a:active {
     display:none;
 }
 
+p:empty{
+    background:none;
+}
+
+
 .col1:hover,
 .col3:hover,
 .col1:focus,
@@ -348,10 +363,23 @@ p a:active {
 	color:#fff;
 }
 
-.col1:active,
-.col3:active {
-
+#tracks h4
+{
+    font-size:24px;
 }
+
+#tracks h5
+{
+    font-size:22px;
+    line-height: 30px;
+}
+
+#tracks p
+{
+    font-size:18px;
+}
+
+
 
 .light:link,
 .light:visited {
@@ -446,7 +474,22 @@ p a:active {
     width: 100%;
   }
 
+    .persons.span
+        {
+           font-size:20px;
+           padding:0px 20px;
+        }
 
+        .persons.img
+        {
+            width:150px;
+            height:150px;
+            border-radius:100px;
+            border:5px solid rgba(64, 101, 115, 0.31);
+            -webkit-filter: grayscale(50%);
+            -moz-filter: grayscale(50%);
+            filter: grayscale(50%);
+        }
 /* Large desktop */
 @media (min-width: 1200px) {  }
 
@@ -463,6 +506,8 @@ p a:active {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+
+
     .col1 {
         width: 65%;
     }
@@ -476,15 +521,55 @@ p a:active {
                 font-size: 20px;
                 padding: 10px 20px;
             }
+    .navbar-brand {
+        padding: 15px 25px;
+    }
+
+         .persons{
+                    text-align:center;
+                  }
+
+                 .persons.span
+                  {
+                     display:block;
+                     font-size:25px;
+                     width:80%
+                     padding:20px;
+                     margin-bottom:10px;
+                     margin-top:30px;
+                  }
+
+                  .persons.img
+                  {
+                      width:150px;
+                      height:150px;
+                      border-radius:100px;
+                      border:5px solid rgba(64, 101, 115, 0.31);
+
+                  }
+
+    .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
+    margin-right: 0px;
+    margin-left: -15px;
+    }
+
+    .navbar-collapse
+    {
+        border:none;
+        box-shadow:none;
+    }
 
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
 
+
+
+
     .navbar
     {
-        display:none;
+
     }
 
     .main {
@@ -508,11 +593,25 @@ p a:active {
         margin-right: 2%;
         }
 
+      .navbar-brand{
+            padding-left:-100px;
+            color:red;
+      }
+
+      .visible-xs {
+        display: none !important;
+      }
+
+
+
+
  }
 
 
  @media (min-width: 320px) and (max-width: 440px) {
-     .col1 {
+
+
+         .col1 {
                 width: 76%;
                 font-size: 20px;
             }
