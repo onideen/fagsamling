@@ -68,12 +68,12 @@ header {
 
 .navbar-brand img{
     width: 50px;
-    margin-top: -5px;
+    margin-top: -12px;
 }
 
 
 .navbar-default .navbar-toggle {
-    background: #C17BB4;
+    background: #DF26BD;
     border:none;
     border-radius:0px;
     margin-right: 20px;
