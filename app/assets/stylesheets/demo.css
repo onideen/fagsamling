@@ -283,25 +283,24 @@ p, .title, strong, h2, h1, h3, h4, h5, .time, .col1, .col2, a
 
 .main strong
 {
-    font-weight: 600;
-    font-size: 20px;
-    display: inline-block;
-    padding: 10px 20px 10px 10px;
+    font-weight: 100;
+    font-size: 24px;
+    padding: 7px 10px;
     color: rgba(90, 81, 92, 0.94);
+    display:inline-block;
+
 }
 
 
-.main p
+.main span
 {
   margin: 0% 0% 0px;
-  font-size: 20px;
-  display: inline-flex;
+  font-size: 24px;
   padding: 10px 0px;
 }
 
 #desc p {
       font-size: 20px;
-      display: inline-flex;
       padding: 10px;
       color: rgba(71, 71, 71, 1);
       line-height: 30px;

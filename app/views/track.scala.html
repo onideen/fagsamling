@@ -10,33 +10,33 @@
 <div class="main">
 
     <div>
-        <strong>Arrangør</strong>
-        <p>@track.getHost</p>
+        <strong>Arrangør:</strong>
+        <span>@track.getHost</span>
     </div>
 
     <div>
-        <strong>Format</strong>
-        <p>@track.getFormat</p>
+        <strong>Format:</strong>
+        <span>@track.getFormat</span>
     </div>
 
     <div>
-        <strong>Nivå</strong>
-        <p>@track.getLevel</p>
+        <strong>Nivå:</strong>
+        <span>@track.getLevel</span>
     </div>
 
     <div>
-        <strong>Rom</strong>
-        <p>@track.getRoom</p>
+        <strong>Rom:</strong>
+        <span>@track.getRoom</span>
     </div>
 
     <div id="desc">
-        <strong>Beskrivelse</strong>
+        <strong>Beskrivelse:</strong>
         @Html(track.getHtmlContent)
     </div>
 
     <div>
-        <strong>Forventet publikum</strong>
-        <p>@track.getAudience</p>
+        <strong>Forventet publikum:</strong>
+        <span>@track.getAudience</span>
     </div>
     <div class="persons">
         @for(instructor<-track.getInstructors){
