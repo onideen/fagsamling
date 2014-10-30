@@ -67,9 +67,10 @@ header {
 }
 
 .navbar-brand img{
-    width: 50px;
-    margin-top: -14px;
-    margin-left: -5px;
+    width: 175px;
+    margin-top: -5px;
+    margin-left: 0px;
+    margin-right: 50px;
 }
 
 
@@ -634,6 +635,13 @@ p:empty{
         box-shadow:none;
     }
 
+    .navbar-brand img{
+              width: 180px;
+              margin-top: -12px;
+              margin-left: 0px;
+              margin-right: 0px;
+          }
+
 }
 
 /* Landscape phones and down */
@@ -675,6 +683,13 @@ p:empty{
 
       .visible-xs {
         display: none !important;
+      }
+
+      .navbar-brand img{
+          width: 150px;
+          margin-top: -8px;
+          margin-left: 0px;
+          margin-right: 0px;
       }
 
 
